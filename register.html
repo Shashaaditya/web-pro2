@@ -113,7 +113,7 @@
             <h1>Registration</h1>
             <div class="input-control">
                 <label for="name">Full name</label>
-                <input id="name" name="name" type="text">
+                <input id="name" name="name" type="text" onkeydown="return /[a-zA-Z ]/i.test(event.key)" required>
                 <div class="error"></div>
             </div>
             <div class="input-control">
@@ -134,7 +134,7 @@
             </div>
             <div class="input-control">
                 <label for="registerPhoneNumber">Phone Number</label>
-                <input type="tel" id="registerPhoneNumber" name="phoneNumber" placeholder="Enter Phone Number" maxlength="10" required>
+                <input type="tel" id="registerPhoneNumber" name="phoneNumber" placeholder="Enter Phone Number" minlength="10" maxlength="10" pattern="(/^[0-9]{10}$/) .{10}" required>
                 <div class="error"></div>
             </div>
             <div class="input-control">
@@ -169,7 +169,7 @@
                 <input id="password2"name="password2" type="password">
                 <div class="error"></div>
             </div>
-            <button type="submit">Register</button>
+            <button type="submit">Sign Up</button>
         </form>
     </div>   
 
