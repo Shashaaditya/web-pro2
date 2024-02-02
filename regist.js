@@ -3,6 +3,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const number = document.getElementById('registerPhoneNumber');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -48,8 +49,11 @@ mobileNumberInput.addEventListener("input", (event) => {
     event.preventDefault();
   }
   if (!inputValue.match(/^[0-9]{10}$/)) {
-    displayErrorMessage("Please enter a valid 10-digit mobile number");
+    setError(number, "Please enter a valid 10-digit mobile number");
+    }else{
+        setSuccess(mobileNumberInput)
     }
+
 
   
   if (inputValue.length > 10) {
@@ -61,11 +65,17 @@ const validateInputs = () => {
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
     const password2Value = password2.value.trim();
+    const mobilevalue = number.value.trim(); 
 
     if(usernameValue === '') {
         setError(username, 'Username is required');
     } else {
         setSuccess(username);
+    }
+    if(mobilevalue.length < 10 || mobilevalue.length > 10){
+        setError(number, 'Mobile number should be of 10 digits');
+    } else{
+        setSuccess(number);
     }
 
     if(emailValue === '') {
