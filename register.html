@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script defer src="./regist.js"></script>
+    <style>
+        body {
+            background: rgb(172, 130, 91);
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 160vh; 
+        }
+
+      
+
+        .container {
+            width: 300px; 
+            padding: 30px;
+            background: #1c2833;
+            color: white;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            margin-top: 5px;
+            padding: 8px;
+            box-sizing: border-box;
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid #fff;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            border: none;
+            outline: none;
+            height: 40px;
+            border-radius: 20px;
+            background: #fb2525;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover {
+            background: blueviolet;
+        }
+        button{
+            margin-top: 20px;
+            border: none;
+            outline: none;
+            height: 40px;
+            border-radius: 20px;
+            background: #fb2525;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        button :hover{
+            background: blueviolet;
+        }
+
+        
+        select#gender {
+            width: 100%;
+            margin-top: 5px;
+            padding: 8px;
+            box-sizing: border-box;
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid #fff;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        select#gender option {
+            background: #1c2833;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="/">
+            <h1>Registration</h1>
+            <div class="input-control">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="registerDOB">DOB</label>
+                <input type="date" id="registerDOB" name="dob" placeholder="Enter Date of Birth" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="registerPhoneNumber">Phone Number</label>
+                <input type="tel" id="registerPhoneNumber" name="phoneNumber" placeholder="Enter Phone Number" maxlength="10" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="registerage">Age</label>
+                <input type="number" id="registerage" name="age" placeholder="Enter Age" required min="0">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="registerAddress">Address</label>
+                <input type="text" id="registerAddress" name="address" placeholder="Enter state, city, house no" required>
+                <div class="error"></div>
+            </div>
+
+
+            <div class="input-control">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input id="password"name="password" type="password">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password2">Confirm Password</label>
+                <input id="password2"name="password2" type="password">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>   
+
+    
+</body>
+</html>
