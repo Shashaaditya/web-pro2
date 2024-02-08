@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number to Words Converter</title>
+</head>
+<body>
+
+<h2>Number to Words Converter</h2>
+
+<input type="text" id="numberInput" placeholder="Enter a number (0-999)">
+<button onclick="convertToWords()">Convert</button>
+<p id="result"></p>
+
+<script>
+function convertToWords() {
+    var number = document.getElementById("numberInput").value;
+
+    
+    if (!isValidNumber(number)) {
+        document.getElementById("result").innerText = "Please enter a valid number between 0 and 999.";
+        return;
+    }
+
+    var words = numberToWords(number);
+    document.getElementById("result").innerText = words;
+}
+
+function isValidNumber(number) {
+    return /^\d{1,3}$/.test(number);
+}
+
+function numberToWords(number) {
+    var ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
+    var words = '';
+
+    if (number == 0) {
+        words = 'zero';
+    } else {
+        var hundreds = Math.floor(number / 100);
+        var remainder = number % 100;
+
+        if (hundreds > 0) {
+            words += ones[hundreds] + ' hundred ';
+        }
+
+        if (remainder > 0) {
+            if (remainder < 10) {
+                words += ones[remainder];
+            } else if (remainder < 20) {
+                words += teens[remainder - 10];
+            } else {
+                var tensDigit = Math.floor(remainder / 10);
+                var onesDigit = remainder % 10;
+                words += tens[tensDigit];
+                if (onesDigit > 0) {
+                    words += '-' + ones[onesDigit];
+                }
+            }
+        }
+    }
+
+    return words.trim();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            background: rgb(172, 130, 91);
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }  
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .login-container {
+            width: 300px;
+            padding: 30px;
+            background: #1c2833;
+            color: white;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            margin-top: 5px;
+            padding: 8px;
+            box-sizing: border-box;
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid #fff;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="submit"], .action-btn {
+            margin-top: 20px;
+            width: 100%;
+            border: none;
+            outline: none;
+            height: 40px;
+            border-radius: 20px;
+            cursor: pointer;
+            background: #fb2525;
+            color: white;
+            font-size: 20px;
+        }
+
+        .action-btn:hover {
+            background: blueviolet;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="login-container">
+        <h1>Login</h1>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            
+            <input type="submit" value="Sign In">
+        </form>
+        <a href="#">Forgot Password?</a>
+
+        
+        <button class="action-btn" onclick="location.href='register.html'">Register</button>
+        <button class= "action-btn" onclick="location.href='resume.html'">CV</button>
+        <button class="action-btn" onclick="location.href='PAGE.html'">Lab Work</button>
+    </div>
+</body>
+</html>
