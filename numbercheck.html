@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Checker</title>
+</head>
+<body>
+
+<h2>Number Checker</h2>
+
+<label for="numberInput">Enter a positive number:</label>
+<input type="number" id="numberInput">
+<button onclick="checkNumber()">Check</button>
+
+<p id="result"></p>
+
+<script>
+  function checkNumber() {
+    
+    var number = parseInt(document.getElementById("numberInput").value);
+
+    
+    var isMultipleOf3 = number % 3 === 0;
+    var isMultipleOf7 = number % 7 === 0;
+
+   
+    if (isMultipleOf3 && isMultipleOf7) {
+      document.getElementById("result").innerText = number + " is a multiple of both 3 and 7.";
+    } else if (isMultipleOf3) {
+      document.getElementById("result").innerText = number + " is a multiple of 3.";
+    } else if (isMultipleOf7) {
+      document.getElementById("result").innerText = number + " is a multiple of 7.";
+    } else {
+      document.getElementById("result").innerText = number + " is not a multiple of 3 or 7.";
+    }
+  }
+</script>
+
+</body>
+</html>

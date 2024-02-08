@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Date</title>
+<script>
+function getCurrentDate() {
+  let today = new Date();
+  let dd = today.getDate();
+  let mm = today.getMonth() + 1; 
+  let yyyy = today.getFullYear();
+
+  
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
+
+  let date1 = mm + '-' + dd + '-' + yyyy;
+  let date2 = mm + '/' + dd + '/' + yyyy;
+  let date3 = dd + '-' + mm + '-' + yyyy;
+  let date4 = dd + '/' + mm + '/' + yyyy;
+
+  document.getElementById('output').innerHTML =
+    "mm-dd-yyyy: " + date1 + "<br>" +
+    "mm/dd/yyyy: " + date2 + "<br>" +
+    "dd-mm-yyyy: " + date3 + "<br>" +
+    "dd/mm/yyyy: " + date4;
+}
+
+window.onload = getCurrentDate;
+</script>
+</head>
+<body>
+<h1>Today's Date</h1>
+<div id="output"></div>
+</body>
+</html>
